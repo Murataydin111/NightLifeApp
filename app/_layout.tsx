@@ -6,6 +6,7 @@ import 'react-native-reanimated';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 
+import ErrorBoundary from '@/components/ErrorBoundary';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { FavoritesProvider } from '@/src/context/FavoritesContext';
 
@@ -31,14 +32,24 @@ export default function RootLayout() {
   }, []);
 
   return (
+  <ErrorBoundary>
     <FavoritesProvider>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+          <Stack.Screen
+            name="(tabs)"
+            options={{ headerShown: false }}
+          />
+
+          <Stack.Screen
+            name="modal"
+            options={{ presentation: 'modal' }}
+          />
         </Stack>
+
         <StatusBar style="auto" />
       </ThemeProvider>
     </FavoritesProvider>
-  );
-}
+  </ErrorBoundary>
+);
+ }
