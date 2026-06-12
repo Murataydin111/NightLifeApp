@@ -13,6 +13,7 @@ import {
   View,
 } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
+import Animated, { FadeIn } from 'react-native-reanimated';
 
 export default function EventDetail() {
   const params = useLocalSearchParams();
@@ -152,6 +153,10 @@ loadWeather();
 };
 
   return (
+  <Animated.View
+    entering={FadeIn.duration(800)}
+    style={{ flex: 1 }}
+  >
     <ScrollView
       style={styles.container}
       contentContainerStyle={{ paddingBottom: 40 }}
@@ -329,7 +334,8 @@ loadWeather();
           Back
         </Text>
       </Pressable>
-    </ScrollView>
+        </ScrollView>
+  </Animated.View>
   );
 }
 

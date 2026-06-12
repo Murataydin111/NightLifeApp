@@ -346,6 +346,33 @@ eas build --platform android --profile production
 * Personalized recommendations using AI
 * Cloud synchronization
 
+## EAS Build
+
+The application was successfully built using Expo Application Services (EAS Build).
+
+### Android Preview Build
+
+```bash
+eas build --platform android --profile preview
+```
+
+The build completed successfully and the APK was generated and tested on an Android emulator.
+
+### Build Features
+
+* Android preview build generated successfully
+* APK installation tested
+* Application launched without runtime errors
+* Compatible with Expo SDK 54
+
+Build system:
+
+* Expo EAS Build
+* Android Preview Profile
+* Expo Router
+* React Native
+
+
 ---
 
 ## Author

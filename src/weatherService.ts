@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_KEY = 'a063c5421429d1ee6763d30811b49faa';
+const API_KEY =
+  process.env.EXPO_PUBLIC_OPENWEATHER_API_KEY;
 
 export const getWeather = async (
   latitude: number,
